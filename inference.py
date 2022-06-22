@@ -7,7 +7,7 @@ def inference_evoformer():
     model = evoformer_base().cuda()
 
     para_count = sum(p.numel() for p in model.parameters() if p.requires_grad)
-    print("Model Size: ", 4 * para_count / 10e6)
+    print("Model Size: ", 4 * para_count / 1000 / 1000, " MB")
 
     model = model.eval()
 
